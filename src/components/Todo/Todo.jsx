@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid"; // For unique IDs
 import { format, parseISO } from "date-fns"; // For date formatting
 import { TrashIcon, PencilIcon } from "@heroicons/react/24/outline"; // Icons
-import Navbar from "./components/navbar/Navbar";
-
+import Navbar from "../navbar/Navbar";
 function Todoo() {
   const [todos, setTodos] = useState(() => {
     // Load todos from localStorage on initial render
@@ -83,11 +82,13 @@ function Todoo() {
 
   return (
     <>
-      <Navbar />
-      <div className="bg-gray-100 h-80 py-8">
+      <div className="fixed top-0 left-0 w-full">
+        <Navbar />
+      </div>
+      <div className="bg-gray-100 h-80 py-8 mt-10">
         <div className="container mx-auto max-w-2xl bg-white rounded-lg shadow-md p-6">
           <h1 className="text-3xl font-semibold text-center text-purple-700 mb-6">
-            Purple Light Todo List on webpage
+            Purple Light Todo
           </h1>
 
           {/* Add Todo */}
